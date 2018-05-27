@@ -7,6 +7,7 @@ Rectangle {
     property int stage
     property real scalew: root.width/100
     property real scaleh: root.height/100
+    property bool visi: true
 
     onStageChanged: {
         if (stage == 1) {
@@ -25,6 +26,9 @@ Rectangle {
 
         else if (stage == 5) {
             welcomeAnimation.running = true
+            colorWheel.opacity=1
+            root.visi = false
+
         }
     }
 
@@ -107,6 +111,7 @@ Rectangle {
 
     Image {
         id: image1
+        visible: visi
         opacity: 0
         anchors {
             bottom: parent.bottom
@@ -124,6 +129,7 @@ Rectangle {
 
     Image {
         id: image2
+        visible: visi
         opacity: 0
         x: -image2.width/5
         anchors {
@@ -140,6 +146,7 @@ Rectangle {
 
     Image {
         id: image3
+        visible: visi
         opacity : 0
         anchors {
             top: parent.top
@@ -157,6 +164,7 @@ Rectangle {
 
     Image {
         id: image4
+        visible: visi
         opacity: 0
         anchors {
             top: parent.top
@@ -174,6 +182,7 @@ Rectangle {
 
     Image {
         id: image5
+        visible: visi
         opacity: 0
         anchors {
             bottom: parent.bottom
@@ -191,6 +200,7 @@ Rectangle {
 
     Image {
         id: image6
+        visible: visi
         opacity: 0
         x: 0 - image6.width/6
         anchors {
@@ -209,6 +219,7 @@ Rectangle {
 
     Image {
         id: image7
+        visible: visi
         opacity: 0
         x: root.width - image7.width + image7.width/3
         anchors {
